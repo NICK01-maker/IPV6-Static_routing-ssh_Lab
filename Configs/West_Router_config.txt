@@ -1,0 +1,117 @@
+Current configuration : 1664 bytes
+!
+version 16.6.4
+no service timestamps log datetime msec
+no service timestamps debug datetime msec
+service password-encryption
+security passwords min-length 5
+!
+hostname West_Router
+!
+login block-for 180 attempts 5 within 120
+!
+!
+enable secret 5 $1$mERr$hEfn8Gyr4CZlRoNEW30hY0
+!
+!
+!
+!
+!
+!
+ip cef
+ipv6 unicast-routing
+!
+no ipv6 cef
+!
+!
+!
+username westadmin privilege 15 secret 5 $1$mERr$01HIrDIeHJKRE5R6uY3G31
+!
+!
+!
+!
+!
+!
+!
+!
+no ip domain-lookup
+ip domain-name Business.com
+!
+!
+spanning-tree mode pvst
+!
+!
+!
+!
+!
+!
+interface GigabitEthernet0/0/0
+ no ip address
+ duplex auto
+ speed auto
+ shutdown
+!
+interface GigabitEthernet0/0/1
+ description local_LAN
+ no ip address
+ duplex auto
+ speed auto
+ ipv6 address FE80::1 link-local
+ ipv6 address 2001:DB8:ABCD:6::1/64
+!
+interface GigabitEthernet0/0/2
+ no ip address
+ duplex auto
+ speed auto
+ shutdown
+!
+interface Serial0/1/0
+ description connect_to_ISP
+ no ip address
+ ipv6 address FE80::2 link-local
+ ipv6 address 2001:DB8:ABCD:5::2/64
+!
+interface Serial0/1/1
+ no ip address
+ clock rate 2000000
+ shutdown
+!
+interface Vlan1
+ no ip address
+ shutdown
+!
+ip classless
+!
+ip flow-export version 9
+!
+ipv6 route 2001:DB8:ABCD:2::/64 2001:DB8:ABCD:5::1
+ipv6 route 2001:DB8:ABCD:1::/64 2001:DB8:ABCD:5::1
+ipv6 route 2001:DB8:ABCD:3::/64 2001:DB8:ABCD:5::1
+ipv6 route 2001:DB8:ABCD:4::/64 2001:DB8:ABCD:5::1
+!
+ip access-list extended sl_def_acl
+ deny tcp any any eq telnet
+ deny tcp any any eq www
+ deny tcp any any eq 22
+ permit tcp any any eq 22
+!
+!
+!
+!
+!
+line con 0
+ password 7 0836495D1D1A0A19020A5951
+ login
+!
+line aux 0
+!
+line vty 0 4
+ login local
+ transport input ssh
+line vty 5 15
+ login local
+ transport input ssh
+!
+!
+!
+end

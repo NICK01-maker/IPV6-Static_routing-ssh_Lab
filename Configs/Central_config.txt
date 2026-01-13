@@ -1,0 +1,106 @@
+Current configuration : 1504 bytes
+!
+version 15.4
+no service timestamps log datetime msec
+no service timestamps debug datetime msec
+service password-encryption
+security passwords min-length 5
+!
+hostname Central_router
+!
+login block-for 180 attempts 5 within 60
+!
+!
+enable secret 5 $1$mERr$/2EIfDwGnaU.BTqnL6jxe0
+!
+!
+!
+!
+!
+!
+ip cef
+ipv6 unicast-routing
+!
+no ipv6 cef
+!
+!
+!
+username centraladmin privilege 15 secret 5 $1$mERr$bRbOIVjrzVa0qxritAwCZ.
+!
+!
+!
+!
+!
+!
+!
+!
+no ip domain-lookup
+ip domain-name Business.com
+!
+!
+spanning-tree mode pvst
+!
+!
+!
+!
+!
+!
+interface GigabitEthernet0/0/0
+ no ip address
+ duplex auto
+ speed auto
+ ipv6 address FE80::2 link-local
+ ipv6 address 2001:DB8:ABCD:1::2/64
+!
+interface GigabitEthernet0/0/1
+ no ip address
+ duplex auto
+ speed auto
+ ipv6 address FE80::1 link-local
+ ipv6 address 2001:DB8:ABCD:2::1/64
+!
+interface GigabitEthernet0/0/2
+ no ip address
+ duplex auto
+ speed auto
+ shutdown
+!
+interface Vlan1
+ no ip address
+ shutdown
+!
+ip classless
+!
+ip flow-export version 9
+!
+ipv6 route 2001:DB8:ABCD:3::/64 2001:DB8:ABCD:1::1
+ipv6 route 2001:DB8:ABCD:5::/64 2001:DB8:ABCD:1::1
+ipv6 route 2001:DB8:ABCD:4::/64 2001:DB8:ABCD:1::1
+ipv6 route 2001:DB8:ABCD:6::/64 2001:DB8:ABCD:1::1
+!
+ip access-list extended sl_def_acl
+ deny tcp any any eq telnet
+ deny tcp any any eq www
+ deny tcp any any eq 22
+ permit tcp any any eq 22
+!
+!
+!
+!
+!
+line con 0
+ password 7 082249401D0B041B110402142B7E71
+ login
+!
+line aux 0
+!
+line vty 0 4
+ login local
+ transport input ssh
+line vty 5 15
+ login local
+ transport input ssh
+!
+!
+!
+end
