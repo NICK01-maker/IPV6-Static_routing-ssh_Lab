@@ -18,10 +18,13 @@ The network uses the global prefix `2001:DB8:ABCD::/64`. All router interfaces a
 | **ISP Router** | G0/0/0 | 2001:DB8:ABCD:1::1/64 | FE80::1 | N/A |
 | **ISP Router** | G0/0/1 | 2001:DB8:ABCD:3::1/64 | FE80::1 | N/A |
 | **ISP Router** | S0/2/0 | 2001:DB8:ABCD:5::1/64 | FE80::1 | N/A |
+| **CENTRAL Router** | G0/0 | 2001:DB8:ABCD:1::2/64 | FE80::2 | N/A |
 | **CENTRAL Router** | G0/1 | 2001:DB8:ABCD:2::1/64 | FE80::1 | N/A |
 | **Users_Central** | NIC | 2001:DB8:ABCD:2::3/64 | FE80::2 | FE80::1 |
+| **EAST Router** | G0/0 2001:DB8:ABCD:3::2/64 | FE80::2 | N/A |
 | **EAST Router** | G0/1 | 2001:DB8:ABCD:4::1/64 | FE80::1 | N/A |
 | **Users_East** | NIC | 2001:DB8:ABCD:4::3/64 | FE80::2 | FE80::1 |
+| **WEST Router** | s0/1/0 | 2001:DB8:ABCD:5::2/64 | FE80::2 | N/A |
 | **WEST Router** | G0/1 | 2001:DB8:ABCD:6::1/64 | FE80::1 | N/A |
 | **Users_West** | NIC | 2001:DB8:ABCD:6::3/64 | FE80::2 | FE80::1 |
 
@@ -57,5 +60,3 @@ L'adressage global est basé sur le préfixe `2001:DB8:ABCD::/64`. Les interface
 ### Physical View
 ![Physical Topology](./Topologies/Physical_Topology.png)
 
-### Physical View
-![Physical Topology](./Physical_Topology.png) SSH Security
