@@ -21,7 +21,7 @@ The network uses the global prefix `2001:DB8:ABCD::/64`. All router interfaces a
 | **CENTRAL Router** | G0/0 | 2001:DB8:ABCD:1::2/64 | FE80::2 | N/A |
 | **CENTRAL Router** | G0/1 | 2001:DB8:ABCD:2::1/64 | FE80::1 | N/A |
 | **Users_Central** | NIC | 2001:DB8:ABCD:2::3/64 | FE80::2 | FE80::1 |
-| **EAST Router** | G0/0 2001:DB8:ABCD:3::2/64 | FE80::2 | N/A |
+| **EAST Router** | G0/0 | 2001:DB8:ABCD:3::2/64 | FE80::2 | N/A |
 | **EAST Router** | G0/1 | 2001:DB8:ABCD:4::1/64 | FE80::1 | N/A |
 | **Users_East** | NIC | 2001:DB8:ABCD:4::3/64 | FE80::2 | FE80::1 |
 | **WEST Router** | s0/1/0 | 2001:DB8:ABCD:5::2/64 | FE80::2 | N/A |
