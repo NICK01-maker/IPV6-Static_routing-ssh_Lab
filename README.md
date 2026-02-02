@@ -63,7 +63,7 @@ L'adressage global est basé sur le préfixe `2001:DB8:ABCD::/64`. Les interface
 ## 🧪 How to Test / Comment Tester
 
 ### 🇺🇸 English Version
-1. **IPv6 Connectivity**: Open the Command Prompt on any PC and use the command "ping <target_ipv6_address>" to test inter-branch connectivity using the addressing scheme table in the documentation file. Use "tracert <target_ipv6_address>" to verify the path through the ISP and other branche.
+1. **IPv6 Connectivity**: Open the Command Prompt on any PC and use the command "ping <target_ipv6_address>" to test inter-branch connectivity using the addressing scheme table in the documentation file https://github.com/NICK01-maker/IPV6-Static_routing-ssh_Lab/blob/main/docs/Docs.docx. Use "tracert <target_ipv6_address>" to verify the path through the ISP and other branche.
 2. **SSH Access**: From a PC terminal, use "ssh -l <username> <router_ipv6_address>" to ensure secure management is active. Usernames and passwords are also in the documentation file.
 3. **Routing Table**: On any router, run "show ipv6 route" to confirm the static routes are correctly injected.
 4. **Views**: Check the Logical view for green link status and the Physical view for the geographic layout of the three branches.
@@ -71,7 +71,7 @@ L'adressage global est basé sur le préfixe `2001:DB8:ABCD::/64`. Les interface
 ---
 
 ### 🇫🇷 Version Française
-1. **Connectivité IPv6** : Ouvrez l'invite de commande sur n'importe quel PC et utilisez "ping <adresse_ipv6_cible>" pour tester la connexion entre les succursales. Utilisez "tracert <adresse_ipv6_cible>" pour vérifier le passage par l'ISP. Vous trouverez la table d'adressage dans le fichier de documentation.
+1. **Connectivité IPv6** : Ouvrez l'invite de commande sur n'importe quel PC et utilisez "ping <adresse_ipv6_cible>" pour tester la connexion entre les succursales. Utilisez "tracert <adresse_ipv6_cible>" pour vérifier le passage par l'ISP. Vous trouverez la table d'adressage dans le fichier de documentation https://github.com/NICK01-maker/IPV6-Static_routing-ssh_Lab/blob/main/docs/Docs.docx.
 2. **Accès SSH** : Depuis le terminal d'un PC, utilisez "ssh -l <nom_utilisateur> <adresse_ipv6_du_routeur>" pour vérifier que la gestion sécurisée est active. les utilisateurs et leurs mots de passe sont aussi presents dans la documentation.
 3. **Table de Routage** : Sur n'importe quel routeur, lancez "show ipv6 route" pour confirmer que les routes statiques sont bien configurées.
 4. **Vues** : Vérifiez la vue Logique pour l'état des liens (verts) et la vue Physique pour l'implantation géographique des trois succursales.
